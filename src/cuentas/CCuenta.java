@@ -15,6 +15,17 @@ public class CCuenta {
     private String cuenta;
     private double saldo;
     private double tipoInterés;
+    
+    public CCuenta()
+    {
+    }
+
+    public CCuenta(String nom, String cue, double sal, double tipo)
+    {
+        nombre =nom;
+        cuenta=cue;
+        saldo=sal;
+    }
     /**
      * @return the nombre
      */
@@ -71,17 +82,6 @@ public class CCuenta {
         this.tipoInterés = tipoInterés;
     }
 
-    public CCuenta()
-    {
-    }
-
-    public CCuenta(String nom, String cue, double sal, double tipo)
-    {
-        nombre =nom;
-        cuenta=cue;
-        saldo=sal;
-    }
-
     public double estado()
     {
         return getSaldo();
@@ -107,7 +107,7 @@ public class CCuenta {
         double saldoActual;
         Scanner lectura = new Scanner (System.in);
         saldoActual = this.estado();
-        System.out.println("El saldo actual es"+ saldoActual );
+        System.out.println("El saldo actual es " + saldoActual );
         System.out.println("¿Quiere retirar efectivo o ingresarlo?");
         String accion = lectura.next();
         
