@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ Clase para simular una cuenta corriente
  */
 package cuentas;
 import java.util.Scanner;
@@ -10,12 +8,17 @@ import java.util.Scanner;
  * @author Alex Miñana
  */
 public class CCuenta {
-    
+    /**
+     * Atributos de la clase CCuenta
+     */
     private String nombre;
     private String cuenta;
     private double saldo;
     private double tipoInterés;
     
+    /**
+     * Metodos constructores, vacío y normal. Crean un objeto cuenta 
+     */
     public CCuenta()
     {
     }
@@ -27,66 +30,71 @@ public class CCuenta {
         saldo=sal;
     }
     /**
-     * @return the nombre
+     * Devuelve el atributo nombre
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * @param nombre the nombre to set
+     * Método para cambiar nombre
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * @return the cuenta
+     * Devuelve número de cuenta
      */
     public String getCuenta() {
         return cuenta;
     }
 
     /**
-     * @param cuenta the cuenta to set
+     * Cambia número de cuenta
      */
     public void setCuenta(String cuenta) {
         this.cuenta = cuenta;
     }
 
     /**
-     * @return the saldo
+     * Devuelve el Saldo de la cuenta
      */
     public double getSaldo() {
         return saldo;
     }
 
     /**
-     * @param saldo the saldo to set
+     * Cambia el Saldo
      */
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
     /**
-     * @return the tipoInterés
+     * Devuelve el tipo de interés
      */
     public double getTipoInterés() {
         return tipoInterés;
     }
 
     /**
-     * @param tipoInterés the tipoInterés to set
+     * Cambia el tipo de interés 
      */
     public void setTipoInterés(double tipoInterés) {
         this.tipoInterés = tipoInterés;
     }
-
+    /**
+     * Devuelve el saldo para saber el estado de la cuenta 
+     */
     public double estado()
     {
         return getSaldo();
     }
-
+    
+    /**
+     * Ingresa la cantidad introducida siempre que sea positiva 
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -94,6 +102,9 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
+    /**
+     * Retira una cantidad introducida siempre que sea positiva y que haya suficiente saldo en la cuenta
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
@@ -103,6 +114,9 @@ public class CCuenta {
         setSaldo(getSaldo() - cantidad);
     }
     
+    /**
+     * Pregunta al usuario que quiere hacer si retirar dinero o ingresarlo
+     */
     public void operativa_cuenta(float cantidad) {
         double saldoActual;
         Scanner lectura = new Scanner (System.in);
